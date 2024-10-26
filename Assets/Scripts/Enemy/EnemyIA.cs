@@ -17,6 +17,7 @@ public class EnemyIA : MonoBehaviour
     [Header("Attack Settings")]
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private float attackTime = 1f;
+    [SerializeField] private float attackDamage = 10f;
     [Header("Detection Settings")]
     [SerializeField] private float detectionRange = 10f;
     [Header("Patrol Settings")]
@@ -86,6 +87,7 @@ public class EnemyIA : MonoBehaviour
     {
         isAttacking = true;
         agent.isStopped = true;
+        player.GetComponent<PlayerStat>().TakeDamage(attackDamage);
         yield return new WaitForSeconds(attackTime);
         agent.isStopped = false;
         isAttacking = false;

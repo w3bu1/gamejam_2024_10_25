@@ -6,14 +6,13 @@ public class PlayerController : MonoBehaviour
 {
     [Header("References")]
     private CharacterController controller;
-    [SerializeField] private Transform camera;
+    [SerializeField] private Transform cam;
     [SerializeField] private GameObject[] enemies;
     [SerializeField] private Animator animator;
     [Header("Movement Settings")]
     [SerializeField] private float walkSpeed = 5f;
     [SerializeField] private float runSpeed = 10f;
     [SerializeField] private float rotateSpeed = 10f;
-    [SerializeField] private float turnSmoothTime = 0.1f;
     [SerializeField] private float speedSmoothTime = 91f;
     [SerializeField] private float gravity = 5f;
 
@@ -45,7 +44,7 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         Vector3 direction = new Vector3(hInput, 0f, vInput);
-        direction = camera.TransformDirection(direction);
+        direction = cam.TransformDirection(direction);
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
