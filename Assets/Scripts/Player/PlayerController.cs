@@ -50,13 +50,8 @@ public class PlayerController : MonoBehaviour
             speed = Mathf.Lerp(speed, walkSpeed, speedSmoothTime * Time.deltaTime);
         }
         direction *= speed;
-<<<<<<< HEAD
-        direction.y = 0;
-
-=======
         direction.y = VerticalVelocity();
         
->>>>>>> a1dbab5 (fix: camera controller)
         controller.Move(direction * Time.deltaTime);
     }
 
@@ -75,13 +70,6 @@ public class PlayerController : MonoBehaviour
 
     private float VerticalVelocity()
     {
-<<<<<<< HEAD
-        float verticalVelocity = 0;
-        if (controller.isGrounded)
-            verticalVelocity = -gravity * Time.deltaTime;
-        else
-            verticalVelocity -= gravity * Time.deltaTime;
-=======
         if (controller.isGrounded)
         {
             verticalVelocity = -gravity * Time.deltaTime;
@@ -90,7 +78,6 @@ public class PlayerController : MonoBehaviour
         {
             verticalVelocity -= gravity * Time.deltaTime;
         }
->>>>>>> a1dbab5 (fix: camera controller)
         return verticalVelocity;
     }
 
