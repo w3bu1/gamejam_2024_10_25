@@ -8,6 +8,7 @@ public class EnemyIA : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform player;
     [SerializeField] private UnityEngine.AI.NavMeshAgent agent;
+    [SerializeField] private Transform prefab;
 
     [Header("Settings")]
     [SerializeField] private float walkSpeed = 100f;
@@ -34,6 +35,13 @@ public class EnemyIA : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
+    private void Start()
+    {
+        StartCoroutine(Patrol());
+        Transform prefabInstance = Instantiate(prefab, transform.position, Quaternion.identity);
+        prefabInstance.SetParent(transform);
     }
 
     private void Update()
@@ -64,10 +72,7 @@ public class EnemyIA : MonoBehaviour
     private void Move()
     {
         if (agent.remainingDistance <= 0.75f)
-        {
-            StartCoroutine(Wait());
             StartCoroutine(Patrol());
-        }
     }
 
     private void Rotate()
