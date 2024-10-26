@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     [Header("References")]
     private CharacterController controller;
     [SerializeField] private Transform camera;
+    [SerializeField] private GameObject[] enemies;
+    [SerializeField] private Animator animator;
     [Header("Movement Settings")]
     [SerializeField] private float walkSpeed = 5f;
     [SerializeField] private float runSpeed = 10f;
@@ -20,6 +22,9 @@ public class PlayerController : MonoBehaviour
     private float vInput;
     private float speed;
     private float verticalVelocity;
+    [Header("Combat Settings")]
+    [SerializeField] private float attackDamage = 10f;
+    [SerializeField] private float attackRange = 2f;
 
     private void Awake()
     {
@@ -27,6 +32,7 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         controller = GetComponent<CharacterController>();
+        GetEnemies();
     }
 
     private void Update()
@@ -51,7 +57,7 @@ public class PlayerController : MonoBehaviour
         }
         direction *= speed;
         direction.y = VerticalVelocity();
-        
+
         controller.Move(direction * Time.deltaTime);
     }
 
@@ -85,5 +91,32 @@ public class PlayerController : MonoBehaviour
     {
         hInput = Input.GetAxis("Horizontal");
         vInput = Input.GetAxis("Vertical");
+        if (Input.GetMouseButtonDown(0))
+            Attack();
+    }
+
+    private void Attack()
+    {
+        animator.SetBool("attack", true);
+        GetEnemies();
+        foreach (GameObject enemy in enemies)
+        {
+            if (Vector3.Distance(transform.position, enemy.transform.position) < attackRange)
+            {
+                enemy.GetComponent<EnemyStat>().TakeDamage(attackDamage);
+            }
+        }
+        StartCoroutine(ResetAttack());
+    }
+
+    private IEnumerator ResetAttack()
+    {
+        yield return new WaitForSeconds(.25f);
+        animator.SetBool("attack", false);
+    }
+
+    private void GetEnemies()
+    {
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
 }
