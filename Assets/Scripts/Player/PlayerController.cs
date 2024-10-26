@@ -13,12 +13,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float rotateSpeed = 200f;
     [SerializeField] private float turnSmoothTime = 0.1f;
     [SerializeField] private float speedSmoothTime = 91f;
-    [SerializeField] private float gravity = -12f;
+    [SerializeField] private float gravity = 5f;
 
     [Header("Input Settings")]
     private float hInput;
     private float vInput;
     private float speed;
+    private float verticalVelocity;
 
     private void Awake()
     {
@@ -50,7 +51,7 @@ public class PlayerController : MonoBehaviour
         }
         direction *= speed;
         direction.y = 0;
-        
+
         controller.Move(direction * Time.deltaTime);
     }
 
@@ -69,15 +70,12 @@ public class PlayerController : MonoBehaviour
 
     private float VerticalVelocity()
     {
-        // if (controller.isGrounded)
-        // {
-        //     verti
-        // }
-        // else
-        // {
-        //     return gravity;
-        // }
-        return 0;
+        float verticalVelocity = 0;
+        if (controller.isGrounded)
+            verticalVelocity = -gravity * Time.deltaTime;
+        else
+            verticalVelocity -= gravity * Time.deltaTime;
+        return verticalVelocity;
     }
 
     private void HandleInput()
