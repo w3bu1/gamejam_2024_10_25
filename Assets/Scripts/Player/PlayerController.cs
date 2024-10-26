@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Settings")]
     [SerializeField] private float walkSpeed = 5f;
     [SerializeField] private float runSpeed = 10f;
-    [SerializeField] private float rotateSpeed = 200f;
+    [SerializeField] private float rotateSpeed = 10f;
     [SerializeField] private float turnSmoothTime = 0.1f;
     [SerializeField] private float speedSmoothTime = 91f;
     [SerializeField] private float gravity = 5f;
@@ -50,14 +50,19 @@ public class PlayerController : MonoBehaviour
             speed = Mathf.Lerp(speed, walkSpeed, speedSmoothTime * Time.deltaTime);
         }
         direction *= speed;
+<<<<<<< HEAD
         direction.y = 0;
 
+=======
+        direction.y = VerticalVelocity();
+        
+>>>>>>> a1dbab5 (fix: camera controller)
         controller.Move(direction * Time.deltaTime);
     }
 
     private void Rotate()
     {
-        if (Mathf.Abs(hInput) < 0.1f || Mathf.Abs(vInput) > 0.1f)
+        if (Mathf.Abs(hInput) != 0 || Mathf.Abs(vInput) != 0)
         {
             Vector3 targetDirection = controller.velocity.normalized;
             targetDirection.y = 0;
@@ -70,11 +75,22 @@ public class PlayerController : MonoBehaviour
 
     private float VerticalVelocity()
     {
+<<<<<<< HEAD
         float verticalVelocity = 0;
         if (controller.isGrounded)
             verticalVelocity = -gravity * Time.deltaTime;
         else
             verticalVelocity -= gravity * Time.deltaTime;
+=======
+        if (controller.isGrounded)
+        {
+            verticalVelocity = -gravity * Time.deltaTime;
+        }
+        else
+        {
+            verticalVelocity -= gravity * Time.deltaTime;
+        }
+>>>>>>> a1dbab5 (fix: camera controller)
         return verticalVelocity;
     }
 
