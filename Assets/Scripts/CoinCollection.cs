@@ -8,6 +8,7 @@ public class CoinCollection : MonoBehaviour
     [SerializeField] private string coinTag = "Coin";
     [SerializeField] private int coinValue = 1;
     [SerializeField] private TextMesh coinText;
+    [SerializeField] private AudioClip collectSound;
 
     private int coinCount = 0;
 
@@ -19,6 +20,7 @@ public class CoinCollection : MonoBehaviour
             coinCount += coinValue;
             if (coinText != null)
                 coinText.text = coinCount.ToString();
+            SoundManager.instance.PlaySoundFXClip(collectSound, transform, 1f);
             Destroy(other.gameObject);
         }
     }

@@ -66,7 +66,7 @@ public class EnemyIA : MonoBehaviour
         if (isAttacking) return;
         if (Vector3.Distance(player.position, transform.position) <= attackRange)
             StartCoroutine(Attack());
-        else
+        else if (agent)
             agent.SetDestination(player.position);
     }
 
@@ -86,6 +86,11 @@ public class EnemyIA : MonoBehaviour
     private IEnumerator Attack()
     {
         isAttacking = true;
+        if (!player || !agent)
+        {
+            isAttacking = false;
+            yield break;
+        }
         agent.isStopped = true;
         player.GetComponent<PlayerStat>().TakeDamage(attackDamage);
         yield return new WaitForSeconds(attackTime);

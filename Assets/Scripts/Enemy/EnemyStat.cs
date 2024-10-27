@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyStat : MonoBehaviour
 {
@@ -8,10 +9,18 @@ public class EnemyStat : MonoBehaviour
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private float currentHealth;
 
+    [Header("GUI")]
+    public Slider healthBar;
+
 
     private void Awake()
     {
         currentHealth = maxHealth;
+    }
+
+    public void Update()
+    {
+        healthBar.value = currentHealth;
     }
 
     public void TakeDamage(float damage)
