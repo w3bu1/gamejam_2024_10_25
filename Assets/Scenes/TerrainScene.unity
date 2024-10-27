@@ -4180,7 +4180,7 @@ MonoBehaviour:
   coinTag: Coin
   coinValue: 1
   coinText: {fileID: 0}
-  collectSound: {fileID: 8300000, guid: 2867f7feb1e51000a92ba270f7e85893, type: 3}
+  collectSound: {fileID: 8300000, guid: fc42983732c84de7096171b7ac4f45e5, type: 3}
 --- !u!114 &402672717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8905,8 +8905,8 @@ GameObject:
   - component: {fileID: 808905984}
   - component: {fileID: 808905983}
   m_Layer: 0
-  m_Name: Level1_tuto
-  m_TagString: Untagged
+  m_Name: 01
+  m_TagString: tuto_banner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9289,7 +9289,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833544636}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25479677, y: -0.000000033276955, z: 0.000000008768261, w: 0.96699464}
+  m_LocalRotation: {x: 0.25479677, y: 0.000000033276955, z: -0.000000008768261, w: 0.96699464}
   m_LocalPosition: {x: 440.517, y: 8.563, z: 402.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16569,7 +16569,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500469460}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25479677, y: -0.000000016638479, z: 0.000000004384131, w: 0.96699464}
+  m_LocalRotation: {x: 0.25479677, y: 0.000000016638475, z: -0.0000000043841295, w: 0.96699464}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
