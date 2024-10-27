@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Coin
   m_EditorClassIdentifier: 
   coinTag: Coin
-  coinPrefab: {fileID: 0}
+  coinPrefab: {fileID: 4961346962619254503, guid: 3851626edc583bedca039c136277317a, type: 3}
   coinValue: 1
   collectSound: {fileID: 0}
