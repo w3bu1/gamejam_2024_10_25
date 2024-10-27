@@ -23,8 +23,8 @@ public class PlayerController : MonoBehaviour
     private float speed;
     private float verticalVelocity;
     [Header("Combat Settings")]
-    [SerializeField] private float attackDamage = 10f;
-    [SerializeField] private float attackRange = 2f;
+    [SerializeField] private float attackDamage = 5f;
+    [SerializeField] private float attackRange = 1f;
 
     private void Awake()
     {

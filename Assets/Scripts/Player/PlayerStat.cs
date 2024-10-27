@@ -10,27 +10,25 @@ public class PlayerStat : MonoBehaviour
     public float maxHealth = 100f;
     public float health;
     private float lerpSpeed = 0.5f;
-    private float breath = 100f;
 
     void Update()
     {
         if (healthSlider.value != health)
-        {
             healthSlider.value = Mathf.Lerp(healthSlider.value, health, lerpSpeed * Time.deltaTime);
-        }
     }
 
    public void TakeDamage(float damage)
     {
         health -= damage;
         if (health <= 0)
+        {
             health = 0;
+            Die();
+        }
     }
 
     private void Die()
     {
-        Debug.Log("Player died");
-        // change this to a game over screen
-        Application.Quit();
+        GameScenes.Instance.GameOver();
     }
 }

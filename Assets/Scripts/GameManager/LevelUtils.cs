@@ -27,6 +27,7 @@ public class LevelUtils : MonoBehaviour
     {
         enemyCountTotal = GameObject.FindGameObjectsWithTag("Enemy").Length;
         coinCountTotal = GameObject.FindGameObjectsWithTag("Coin").Length;
+        GameScenes.Instance.HideCursor();
         UpdateScore(score);
     }
 
@@ -45,12 +46,7 @@ public class LevelUtils : MonoBehaviour
 
         if (remainingEnemies == 0)
         {
-            Debug.Log("All enemies are defeated!");
-        }
-
-        if (remainingCoins == 0)
-        {
-            Debug.Log("All coins are collected!");
+            GameScenes.Instance.GameWin();
         }
     }
 

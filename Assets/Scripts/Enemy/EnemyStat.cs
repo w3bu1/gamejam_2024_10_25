@@ -20,6 +20,8 @@ public class EnemyStat : MonoBehaviour
 
     public void Update()
     {
+        if (healthBar == null)
+            return;
         healthBar.value = currentHealth;
     }
 

@@ -20,13 +20,13 @@ public class GameScenes : MonoBehaviour
         }
     }
 
-    private void HideCursor()
+    public void HideCursor()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void ShowCursor()
+    public void ShowCursor()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -76,7 +76,7 @@ public class GameScenes : MonoBehaviour
         gameWinPanel.gameObject.SetActive(true);
         Time.timeScale = 0;
         runtimePanel.gameObject.SetActive(false);
-        gameOverPanel.gameObject.SetActive(true);
+        gameOverPanel.gameObject.SetActive(false);
         gamePausePanel.gameObject.SetActive(false);
         StartCoroutine(WaitAndRestart());
     }
@@ -84,7 +84,6 @@ public class GameScenes : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1;
-        // store active scene name
         HideCursor();
         string activeSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
         UnityEngine.SceneManagement.SceneManager.LoadScene(activeSceneName);
