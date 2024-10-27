@@ -4347,6 +4347,8 @@ GameObject:
   m_Component:
   - component: {fileID: 418957596}
   - component: {fileID: 418957595}
+  - component: {fileID: 418957598}
+  - component: {fileID: 418957597}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4385,6 +4387,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &418957597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418957594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c4776762d6857b18ddb72340c399e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameScene: {fileID: 418957598}
+--- !u!114 &418957598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418957594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcf8766888e8556d7810dce10faf1498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamePausePanel: {fileID: 0}
+  gameOverPanel: {fileID: 0}
+  gameWinPanel: {fileID: 0}
+  runtimePanel: {fileID: 0}
 --- !u!1 &432941888
 GameObject:
   m_ObjectHideFlags: 0

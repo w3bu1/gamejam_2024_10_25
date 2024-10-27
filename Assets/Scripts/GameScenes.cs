@@ -20,9 +20,24 @@ public class GameScenes : MonoBehaviour
         }
     }
 
+    private void HideCursor()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void ShowCursor()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     public void PauseGame()
     {
         Time.timeScale = 0;
+        if (gamePausePanel == null)
+            return;
+        ShowCursor();
         gamePausePanel.gameObject.SetActive(true);
         runtimePanel.gameObject.SetActive(false);
         gameOverPanel.gameObject.SetActive(false);
@@ -31,8 +46,11 @@ public class GameScenes : MonoBehaviour
 
     public void ResumeGame()
     {
-        gamePausePanel.gameObject.SetActive(false);
+        if (runtimePanel == null)
+            return;
+        HideCursor();
         runtimePanel.gameObject.SetActive(true);
+        gamePausePanel.gameObject.SetActive(false);
         Time.timeScale = 1;
         gameOverPanel.gameObject.SetActive(false);
         gameWinPanel.gameObject.SetActive(false);
@@ -40,6 +58,9 @@ public class GameScenes : MonoBehaviour
 
     public void GameOver()
     {
+        if (gameOverPanel == null)
+            return;
+        ShowCursor();
         gameOverPanel.gameObject.SetActive(true);
         Time.timeScale = 0;
         gameWinPanel.gameObject.SetActive(false);
@@ -49,6 +70,9 @@ public class GameScenes : MonoBehaviour
 
     public void GameWin()
     {
+        if (gameWinPanel == null)
+            return;
+        ShowCursor();
         gameWinPanel.gameObject.SetActive(true);
         Time.timeScale = 0;
         runtimePanel.gameObject.SetActive(false);
@@ -61,12 +85,14 @@ public class GameScenes : MonoBehaviour
     {
         Time.timeScale = 1;
         // store active scene name
+        HideCursor();
         string activeSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
         UnityEngine.SceneManagement.SceneManager.LoadScene(activeSceneName);
     }
 
     public void QuitGame()
     {
+        ShowCursor();
         Application.Quit();
     }
 
