@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CreditControle : MonoBehaviour
 {
-	public float scrollSpeed = 40f;
+	public float scrollSpeed = 70f;
 
 	private RectTransform rectTransform;
 
