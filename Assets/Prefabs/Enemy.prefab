@@ -183,7 +183,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -1.071}
-  m_SizeDelta: {x: 71.6, y: 11.18}
+  m_SizeDelta: {x: 42, y: 9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &9036336651646217028
 MonoBehaviour:
@@ -287,12 +287,12 @@ MonoBehaviour:
   agent: {fileID: 1159984931145428568}
   prefab: {fileID: 4304595553278958195, guid: 7cdab7345beb176e8ac5a4c6fee5f3bd, type: 3}
   walkSpeed: 1
-  chaseSpeed: 2
-  turnSpeed: 10
-  attackRange: 2
+  chaseSpeed: 4
+  turnSpeed: 5
+  attackRange: 1
   attackTime: 1
-  attackDamage: 10
-  detectionRange: 5
+  attackDamage: 2
+  detectionRange: 7
   patrolDistMin: 3
   patrolDistMax: 10
   waitingTimeMin: 2

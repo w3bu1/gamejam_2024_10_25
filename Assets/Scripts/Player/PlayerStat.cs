@@ -7,21 +7,16 @@ public class PlayerStat : MonoBehaviour
 {
     [Header("Player Stats")]
     public Slider healthSlider;
-    public Slider easeSlider;
     public float maxHealth = 100f;
     public float health;
     private float lerpSpeed = 0.5f;
+    private float breath = 100f;
 
     void Update()
     {
         if (healthSlider.value != health)
         {
-            healthSlider.value = health;
-        }
-
-        if (healthSlider.value != easeSlider.value)
-        {
-            easeSlider.value = Mathf.Lerp(easeSlider.value, health, lerpSpeed * Time.deltaTime);
+            healthSlider.value = Mathf.Lerp(healthSlider.value, health, lerpSpeed * Time.deltaTime);
         }
     }
 

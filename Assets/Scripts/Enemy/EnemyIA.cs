@@ -17,7 +17,7 @@ public class EnemyIA : MonoBehaviour
     [Header("Attack Settings")]
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private float attackTime = 1f;
-    [SerializeField] private float attackDamage = 10f;
+    [SerializeField] private float attackDamage = 3f;
     [Header("Detection Settings")]
     [SerializeField] private float detectionRange = 10f;
     [Header("Patrol Settings")]
