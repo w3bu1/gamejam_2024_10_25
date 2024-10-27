@@ -78,7 +78,7 @@ public class GameScenes : MonoBehaviour
         runtimePanel.gameObject.SetActive(false);
         gameOverPanel.gameObject.SetActive(false);
         gamePausePanel.gameObject.SetActive(false);
-        StartCoroutine(WaitAndRestart());
+        LoadScene("MainMenu");
     }
 
     public void RestartGame()

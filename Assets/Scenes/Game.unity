@@ -4531,12 +4531,12 @@ MonoBehaviour:
   enemies: []
   coins: []
   animator: {fileID: 759346374}
-  walkSpeed: 3
+  walkSpeed: 5
   runSpeed: 10
-  rotateSpeed: 10
+  rotateSpeed: 8
   speedSmoothTime: 0.1
   gravity: 1
-  attackDamage: 10
+  attackDamage: 7
   attackRange: 1
 --- !u!143 &402672715
 CharacterController:
@@ -9643,7 +9643,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833544636}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4817692, y: -0, z: -0, w: 0.8762981}
+  m_LocalRotation: {x: 0.48176923, y: -0.000000026115723, z: 0.000000014357844, w: 0.8762981}
   m_LocalPosition: {x: -0.21609497, y: 2.9803972, z: -0.8707886}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17222,7 +17222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500469460}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.46575007, y: -0.000000021533111, z: 0.00000001133333, w: 0.8849163}
+  m_LocalRotation: {x: 0.46575007, y: 0.000000021533106, z: -0.000000011333326, w: 0.8849163}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17655,7 +17655,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552332922}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.48176917, y: -0, z: -0, w: 0.8762982}
+  m_LocalRotation: {x: 0.4817692, y: -0, z: -0, w: 0.8762982}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
