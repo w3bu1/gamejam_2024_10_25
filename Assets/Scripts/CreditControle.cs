@@ -7,7 +7,7 @@ public class CreditControle : MonoBehaviour
 {
 	public float scrollSpeed = 40f;
 
-	private RecTransform rectTransform;
+	private RectTransform rectTransform;
 
 	// Start is called before the first frame update
 	void Start()
