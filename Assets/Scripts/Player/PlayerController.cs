@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     [SerializeField] private Transform cam;
     [SerializeField] private GameObject[] enemies;
+    [SerializeField] private GameObject[] coins;
     [SerializeField] private Animator animator;
     [Header("Movement Settings")]
     [SerializeField] private float walkSpeed = 5f;
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour
 
         controller = GetComponent<CharacterController>();
         GetEnemies();
+        GetCoins();
     }
 
     private void Update()
@@ -117,5 +119,10 @@ public class PlayerController : MonoBehaviour
     private void GetEnemies()
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    }
+
+    private void GetCoins()
+    {
+        coins = GameObject.FindGameObjectsWithTag("Coin");
     }
 }

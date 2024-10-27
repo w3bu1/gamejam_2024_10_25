@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerStat : MonoBehaviour
+public class HelthBar : MonoBehaviour
 {
-    [Header("Player Stats")]
     public Slider healthSlider;
     public Slider easeSlider;
     public float maxHealth = 100f;
@@ -25,17 +24,10 @@ public class PlayerStat : MonoBehaviour
         }
     }
 
-   public void TakeDamage(float damage)
+    void TakeDamage(float damage)
     {
         health -= damage;
         if (health <= 0)
             health = 0;
-    }
-
-    private void Die()
-    {
-        Debug.Log("Player died");
-        // change this to a game over screen
-        Application.Quit();
     }
 }

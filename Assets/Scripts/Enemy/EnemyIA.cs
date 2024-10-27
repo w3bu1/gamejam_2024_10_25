@@ -48,13 +48,13 @@ public class EnemyIA : MonoBehaviour
     private void Update()
     {
         float distance = Vector3.Distance(player.position, transform.position);
-        if (distance < detectionRange)
+        if (distance < detectionRange && agent)
         {
             agent.speed = chaseSpeed;
             Rotate();
             TakeDecision();
         }
-        else
+        else if (agent)
         {
             agent.speed = walkSpeed;
             Move();

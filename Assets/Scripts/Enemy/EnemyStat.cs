@@ -28,6 +28,7 @@ public class EnemyStat : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
+            LevelUtils.instance.UpdateScore(10);
             Die();
         }
     }
