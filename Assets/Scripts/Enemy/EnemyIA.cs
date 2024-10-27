@@ -66,7 +66,7 @@ public class EnemyIA : MonoBehaviour
         if (isAttacking) return;
         if (Vector3.Distance(player.position, transform.position) <= attackRange)
             StartCoroutine(Attack());
-        else if (agent)
+        else if (agent != null)
             agent.SetDestination(player.position);
     }
 
@@ -111,7 +111,7 @@ public class EnemyIA : MonoBehaviour
         targetPosition += patrollDistance * new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)).normalized;
 
         NavMeshHit hit;
-        if (NavMesh.SamplePosition(targetPosition, out hit, patrolDistMax, NavMesh.AllAreas))
+        if (agent != null && NavMesh.SamplePosition(targetPosition, out hit, patrolDistMax, NavMesh.AllAreas))
             agent.SetDestination(hit.position);
     }
 

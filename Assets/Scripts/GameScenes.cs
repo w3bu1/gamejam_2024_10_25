@@ -103,7 +103,7 @@ public class GameScenes : MonoBehaviour
 
     private IEnumerator WaitAndRestart()
     {
-        yield return new WaitForSeconds(5f);
-        RestartGame();
+        yield return new WaitForSeconds(2f);
+        LoadScene("MainMenu");
     }
 }
